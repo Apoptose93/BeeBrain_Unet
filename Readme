@@ -1,1 +1,30 @@
 3D Semantic insect brain segmentation using Pytorch and 3D-Unet
+
+Note: The code is quite old and in bad quality ! Requires major refactoring before use.
+
+
+Further improvement Ideas
+
+- ideas / potential other methods
+- segmentation pipeline for 1 channel at a time -> 3 models
+ -> reduces ram load by 50% 1+1 instead of 1+3 images in rgb
+- could also potentially convert the 3 channel rgb to another 1 channel classes format and later back
+
+- labels output should work that way with list of n with possible labels 0-6
+- outputs flattened to n*classes
+
+- check for different looks on dataslices
+- how does the input data look like? how does the label data look like? how does the label flattened and reversed look like
+
+- should technically train with every picture size aslong as imagesize = labelsize
+
+- download more pictures and convert
+- build up to real unet
+- build upon pretrained models somehow
+- find best possible image size processible or get more power
+- implement augmentation for more data
+
+- problem: input data ungerade -> ungleichgroße dimensions können nicht cat werden
+- größere bilder mit gerader anzahl nehmen
+
+- gehirn ist symmetrisch : beide seiten jeweils als Input nehmen? ggf drehen
